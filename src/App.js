@@ -5,7 +5,7 @@ import TodoList from "./components/TodoList";
 import SearchBar from "./components/SearchBar";
 import ThemeToggle from "./components/ThemeToggle";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import { getTodos, saveTodos } from "./utils/localStorage";
+import { getTodos, saveTodos, deleteAllTodos } from "./utils/localStorage";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -67,7 +67,7 @@ function App() {
   const filteredTodos = todos
     .filter((todo) => {
       if (filter === "completed") return todo.completed;
-      if (filter === "active") return !todo.completed;
+      if (filter === "pending") return !todo.completed;
       return true;
     })
     .filter(
@@ -98,11 +98,15 @@ function App() {
             {todos.length > 0 && (
               <SearchBar
                 searchTerm={searchTerm}
-                onSearchChange={handleSearchChange}
+                setSearchTerm={handleSearchChange}
                 filter={filter}
-                onFilterChange={handleFilterChange}
+                setFilter={handleFilterChange}
                 onClearCompleted={() => setTodos(activeTodos)}
                 completedCount={completedTodos.length}
+                clearAllTodos={() => {
+                  deleteAllTodos();
+                  setTodos([]);
+                }}
               />
             )}
             <TodoList

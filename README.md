@@ -10,7 +10,7 @@ This project demonstrates CRUD operations (Create, Read, Update, Delete) with pe
 ✅ Add, edit, and delete todos  
 ✅ Mark todos as completed or pending  
 ✅ Search and filter todos easily  
-✅ Save todos in **localStorage** 
+✅ Save todos in **localStorage**  
 ✅ Toggle between **Light & Dark theme**  
 ✅ Clear all todos at once  
 

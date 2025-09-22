@@ -60,7 +60,7 @@ todo-app-v2/
 ## ⚡ Installation & Setup
 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/todo-app-v2.git
+git clone https://github.com/adarsh23012003/todo-app-v2.git
 cd todo-app-v2
 ```
 2. Install dependencies

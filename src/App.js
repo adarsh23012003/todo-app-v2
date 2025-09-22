@@ -77,9 +77,6 @@ function App() {
           todo.description.toLowerCase().includes(searchTerm.toLowerCase()))
     );
 
-  const activeTodos = todos.filter((todo) => !todo.completed);
-  const completedTodos = todos.filter((todo) => todo.completed);
-
   return (
     <ThemeProvider>
       <div className="app-container">
@@ -101,8 +98,6 @@ function App() {
                 setSearchTerm={handleSearchChange}
                 filter={filter}
                 setFilter={handleFilterChange}
-                onClearCompleted={() => setTodos(activeTodos)}
-                completedCount={completedTodos.length}
                 clearAllTodos={() => {
                   deleteAllTodos();
                   setTodos([]);
